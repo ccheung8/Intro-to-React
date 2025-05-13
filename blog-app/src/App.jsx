@@ -1,17 +1,9 @@
-import React, { useState } from "react";
 import "./App.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router";
-import { decrement, decrementByValue, increment, incrementByValue } from "./store/counterSlice";
 
 function App() {
   const topPosts = useSelector((state) => state.posts.posts);
-  const count = useSelector((state) => state.counter.count);
-
-  const [incrementValue, setIncrementValue] = useState(1);
-  const [decrementValue, setDecrementValue] = useState(1);
-
-  const dispatch = useDispatch();
 
   return (
     <>
@@ -38,14 +30,6 @@ function App() {
           </li>
         ))}
       </ul>
-      <h3>Counter</h3>
-      <p>
-        <input type="number" onChange={(e) => setIncrementValue(e.target.value)} />
-        <input type="number" onChange={(e) => setDecrementValue(e.target.value)} />
-        <button onClick={() => dispatch(incrementByValue(incrementValue))}>+</button>
-        {count}
-        <button onClick={() => dispatch(decrementByValue(decrementValue))}>-</button>
-      </p>
     </>
   );
 }

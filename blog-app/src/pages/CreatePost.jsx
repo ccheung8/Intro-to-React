@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import { createPost } from "../store/postSlice";
 import { useNavigate } from "react-router";

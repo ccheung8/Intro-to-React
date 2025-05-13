@@ -28,6 +28,11 @@ export function NavBar() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/counter">
+                  Counter
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/search">
                   Search 🔎
                 </Link>

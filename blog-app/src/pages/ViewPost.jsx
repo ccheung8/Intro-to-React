@@ -1,17 +1,11 @@
 import React from "react";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
+import { selectPost, selectPostById } from "../store/postSlice";
 
 export function ViewPost() {
-  const posts = useSelector((state) => state.posts.posts);
   const { id } = useParams();
-
-  function viewPost() {
-    const post = posts.find((element) => element.id == id);
-    return post;
-  }
-
-  const post = viewPost();
+  const post = useSelector((state) => selectPostById(state, id));
 
   return (
     <>

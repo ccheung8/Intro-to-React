@@ -13,6 +13,7 @@ import {
 } from "./pages/index.js";
 import { Provider } from "react-redux";
 import { store } from "./store/index.js";
+import { Counter } from "./pages/Counter.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")).render(
         <div className="container">
           <Routes>
             <Route index element={<App />} />
+            <Route path="counter" element={<Counter />} />
             <Route path="create" element={<CreatePost />} />
             <Route path="posts">
               <Route index element={<AllPosts />} />

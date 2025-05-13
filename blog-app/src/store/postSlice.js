@@ -16,8 +16,16 @@ const postSlice = createSlice({
       });
     },
   },
+  // selectors: {
+  //   selectPost: (state, id) => state.posts.find((element) => element.id == id),
+  // },
 });
 
+export const selectPostById = (state, id) =>
+  state.posts.posts.find((post) => post.id == id);
+
 export const { createPost } = postSlice.actions;
+
+export const { selectPost } = postSlice.selectors;
 
 export default postSlice.reducer;
