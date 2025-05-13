@@ -1,15 +1,19 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { postActions } from "../store/postReducer";
+import { createPost } from "../store/postSlice";
+import { useNavigate } from "react-router";
 
 export function CreatePost() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function handleCreatePost(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-    dispatch(postActions.createPost(data));
+    dispatch(createPost(data));
+    e.target.reset(); // clear form data
+    navigate("/posts");
   }
 
   return (

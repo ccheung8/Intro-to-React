@@ -19,7 +19,7 @@ createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <BrowserRouter>
         <NavBar />
-        <div className="container w-75">
+        <div className="container">
           <Routes>
             <Route index element={<App />} />
             <Route path="create" element={<CreatePost />} />

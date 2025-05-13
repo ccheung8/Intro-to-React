@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 
 export function ViewPost() {
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts.posts);
   const { id } = useParams();
 
   function viewPost() {
