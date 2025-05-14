@@ -39,6 +39,19 @@ export function CreatePost() {
             placeholder="Post text here.."
             required
           ></textarea>
+          <select name="category" id="category" defaultValue={""} required>
+            <option value="" disabled>
+              Choose a category...
+            </option>
+            <option value="business">Business</option>
+            <option value="educational">Educational</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="fashion">Fashion</option>
+            <option value="food">Food</option>
+            <option value="health">Health</option>
+            <option value="lifestyle">Lifestyle</option>
+            <option value="technology">Technology</option>
+          </select>
           <button type="submit" className="btn btn-primary">
             Submit Post
           </button>
